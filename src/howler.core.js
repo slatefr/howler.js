@@ -2273,6 +2273,7 @@
         self._node.src = parent._src;
         self._node.preload = parent._preload === true ? 'auto' : parent._preload;
         self._node.volume = volume * Howler.volume();
+        if(self._node.src.indexOf('audion.fm') !== -1) self._node.setAttribute('crossorigin', 'anonymous');
 
         // Begin loading the source.
         self._node.load();
